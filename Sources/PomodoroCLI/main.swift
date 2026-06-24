@@ -16,7 +16,7 @@ enum PomodoroCLI {
     @MainActor
     private static func run() async throws {
         let arguments = Array(CommandLine.arguments.dropFirst())
-        let controller = ProcessController(paths: try RuntimePaths.live(create: arguments.first == "on"))
+        let controller = ProcessController(paths: try RuntimePaths.live(create: arguments.first == "start"))
 
         switch arguments.first {
         case "start":

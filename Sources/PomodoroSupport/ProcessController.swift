@@ -4,7 +4,7 @@ import Foundation
 import MachO
 
 public struct ProcessController {
-    public static let bundleIdentifier = "com.stormzhang.Pomodoro"
+    public static let bundleIdentifier = "com.mctang24.Pomodoro"
 
     private static let appName = "Pomodoro"
     private static let appExecutableName = "PomodoroApp"

@@ -8,7 +8,8 @@ let package = Package(
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "pomodoro", targets: ["PomodoroCLI"])
+        .executable(name: "pomodoro", targets: ["PomodoroCLI"]),
+        .executable(name: "PomodoroApp", targets: ["PomodoroApp"])
     ],
     targets: [
         .target(
