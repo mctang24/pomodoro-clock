@@ -1,8 +1,8 @@
 # Pomodoro
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+**English** | [简体中文](README.zh-CN.md)
 
-A minimal macOS menu bar Pomodoro timer that detects sustained work and sends a quiet reminder when it is time to rest.
+Pomodoro is a lightweight macOS menu bar timer that helps you notice long work sessions and take short breaks on time.
 
 | Working | Rest Reminder |
 | --- | --- |
@@ -12,35 +12,35 @@ A minimal macOS menu bar Pomodoro timer that detects sustained work and sends a 
 ![Swift](https://img.shields.io/badge/Swift-6.0-F05138?style=flat-square&logo=swift&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-111111?style=flat-square)
 
-## Why Pomodoro
+## What It Does
 
-Pomodoro is intentionally small. It runs locally, lives in the menu bar, and keeps only two states: `Working` and `Resting`. There is no task list, no reporting, no account, and no configuration system.
+Pomodoro runs locally and stays in the macOS menu bar. It has only two states: `Working` and `Resting`.
 
-The app focuses on one job: notice when you have been working for too long, then nudge you to take a short break without interrupting your flow.
+It does not include tasks, reports, accounts, sync, or a settings system. The goal is to keep the workflow simple: start it once, let it track active work, and get a quiet reminder when a break is due.
 
-## Behavior
+## How It Works
 
-After `pomodoro start`, the app enters `Working` and shows the elapsed work time in the menu bar, such as `Working · 32m`.
+After `pomodoro start`, the app enters `Working` and shows elapsed work time in the menu bar, for example `Working · 32m`.
 
 ### `Working` -> `Resting`
 
-The app switches to `Resting` when either condition is met:
+Pomodoro switches to `Resting` in either case:
 
-| Condition | Behavior |
+| Condition | Result |
 | --- | --- |
-| 45 minutes of continuous work | Sends `Time to rest`, then enters `Resting` |
-| 10 minutes without user activity | Enters `Resting` without sending a notification |
+| You work for 45 minutes | Sends `Time to rest`, then enters `Resting` |
+| Your Mac is idle for 10 minutes | Enters `Resting` without a notification |
 
 ### `Resting` -> `Working`
 
-The app starts a new work session only after both conditions are met:
+Pomodoro starts the next work session only after both conditions are met:
 
-| Condition | Behavior |
+| Condition | Result |
 | --- | --- |
-| At least 5 minutes in `Resting` | The rest guard period has completed |
-| New user activity after the guard period | A new `Working` session begins |
+| `Resting` has lasted at least 5 minutes | The minimum rest period is complete |
+| You use the Mac again after that period | A new `Working` session begins |
 
-In short: rest for at least 5 minutes, then use the Mac again to start the next work session.
+In short: take at least a 5-minute break, then return to your Mac to start the next work session.
 
 ## Install
 
